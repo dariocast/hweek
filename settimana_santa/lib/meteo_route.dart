@@ -14,6 +14,10 @@ class _MeteoRouteState extends State<MeteoRoute> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Previsioni Meteo'),
+        centerTitle: true ,
+      ),
       body: Center(
         child: Text("Ciao"),
       ),
