@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:settimana_santa/meteo_route.dart';
 
 class HomeRoute extends StatefulWidget {
   static var routeName = '/';
@@ -70,6 +71,9 @@ class _HomeRouteState extends State<HomeRoute> {
           ListTile(
             title: Text('Il Meteo'),
             subtitle: Text('Previsioni meteorologiche'),
+            onTap: () {
+              Navigator.of(context).pushNamed(MeteoRoute.routeName);
+            },
           )
         ],
       ),
