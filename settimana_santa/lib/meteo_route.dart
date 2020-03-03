@@ -98,7 +98,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                               '${model.main.temp_max}/${model.main.temp_min}',
                               style: TextStyle(
                                 fontSize: 15.0,
-                                fontFamily: 'Roboto',
+                                fontFamily: 'Morris',
                                 color: Colors.white70,
                               ),
                             ),
@@ -106,7 +106,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                               '${model.weather[0].description}'.toUpperCase(),
                               style: TextStyle(
                                 fontSize: 15.0,
-                                fontFamily: 'Roboto',
+                                fontFamily: 'Morris',
                                 color: Colors.white70,
                               ),
                             ),
@@ -211,7 +211,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                                     height: 1.5,
                                                     letterSpacing: 0.25,
                                                     fontWeight: FontWeight.bold,
-                                                    fontFamily: 'Montserrat',
+                                                    fontFamily: 'Morris',
                                                   ),
                                                 ),
                                                 Text(
@@ -222,7 +222,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                                     letterSpacing: 0.25,
                                                     fontWeight:
                                                         FontWeight.normal,
-                                                    fontFamily: 'Roboto',
+                                                    fontFamily: 'Morris',
                                                   ),
                                                 ),
                                               ],
@@ -259,7 +259,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                                     height: 1.5,
                                                     letterSpacing: 0.25,
                                                     fontWeight: FontWeight.bold,
-                                                    fontFamily: 'Montserrat',
+                                                    fontFamily: 'Morris',
                                                   ),
                                                 ),
                                                 Text(
@@ -270,7 +270,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                                     letterSpacing: 0.25,
                                                     fontWeight:
                                                         FontWeight.normal,
-                                                    fontFamily: 'Roboto',
+                                                    fontFamily: 'Morris',
                                                   ),
                                                 ),
                                               ],
@@ -307,7 +307,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                                     height: 1.5,
                                                     letterSpacing: 0.25,
                                                     fontWeight: FontWeight.bold,
-                                                    fontFamily: 'Montserrat',
+                                                    fontFamily: 'Morris',
                                                   ),
                                                 ),
                                                 Text(
@@ -318,7 +318,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                                     letterSpacing: 0.25,
                                                     fontWeight:
                                                         FontWeight.normal,
-                                                    fontFamily: 'Roboto',
+                                                    fontFamily: 'Morris',
                                                   ),
                                                 ),
                                               ],
@@ -355,7 +355,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                                     height: 1.5,
                                                     letterSpacing: 0.25,
                                                     fontWeight: FontWeight.bold,
-                                                    fontFamily: 'Montserrat',
+                                                    fontFamily: 'Morris',
                                                   ),
                                                 ),
                                                 Text(
@@ -366,7 +366,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                                     letterSpacing: 0.25,
                                                     fontWeight:
                                                         FontWeight.normal,
-                                                    fontFamily: 'Roboto',
+                                                    fontFamily: 'Morris',
                                                   ),
                                                 ),
                                               ],
@@ -403,7 +403,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                                     height: 1.5,
                                                     letterSpacing: 0.25,
                                                     fontWeight: FontWeight.bold,
-                                                    fontFamily: 'Montserrat',
+                                                    fontFamily: 'Morris',
                                                   ),
                                                 ),
                                                 Text(
@@ -414,7 +414,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                                     letterSpacing: 0.25,
                                                     fontWeight:
                                                         FontWeight.normal,
-                                                    fontFamily: 'Roboto',
+                                                    fontFamily: 'Morris',
                                                   ),
                                                 ),
                                               ],
@@ -434,7 +434,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                     width: double.infinity,
                                     decoration: new BoxDecoration(
                                       borderRadius: BorderRadius.circular(12),
-                                      color: Colors.white,
+                                      color: Theme.of(context).canvasColor,
                                       boxShadow: [
                                         new BoxShadow(
                                           color: Theme.of(context).primaryColor,
@@ -458,7 +458,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                             height: 1.5,
                                             letterSpacing: 0.25,
                                             fontWeight: FontWeight.bold,
-                                            fontFamily: 'Montserrat',
+                                            fontFamily: 'Morris',
                                           ),
                                         ),
                                         Text(
@@ -468,7 +468,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                             height: 1.0,
                                             letterSpacing: 0.25,
                                             fontWeight: FontWeight.normal,
-                                            fontFamily: 'Roboto',
+                                            fontFamily: 'Morris',
                                           ),
                                         ),
                                       ],
@@ -493,7 +493,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Image.asset(
-                        'assets/images/bug_fixed.png',
+                        'assets/images/weather/bug_fixed.png',
                         width: 250,
                         fit: BoxFit.fitWidth,
                       ),
@@ -504,7 +504,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                         ),
                       ),
                       Text(
-                        'Oh Oh, Houston we have a problem!',
+                        'Oh Oh, Houston abbiamo un problema!',
                         style: TextStyle(
                             fontSize: 20.0,
                             height: 1.0,
@@ -519,7 +519,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                         ),
                       ),
                       Text(
-                        'Check your network or give the location permission to the app.',
+                        'Controlla la rete e i permessi dell\'app',
                         style: TextStyle(
                             fontSize: 15.0,
                             height: 1.0,
@@ -555,7 +555,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
   Future<WeatherModel> getWeather() async {
     final response = await http.get(
         'https://api.openweathermap.org/data/2.5/weather?zip=80063,it&appid=' +
-            apiKey);
+            apiKey+'&units=metric&lang=it');
     if (response.statusCode == 200) {
       var result = json.decode(response.body);
       var model = WeatherModel.fromJson(result);
