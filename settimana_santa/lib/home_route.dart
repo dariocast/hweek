@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:settimana_santa/meteo_route.dart';
+import 'package:settimana_santa/miserere_route.dart';
 
 class HomeRoute extends StatefulWidget {
   static var routeName = '/';
@@ -73,6 +74,14 @@ class _HomeRouteState extends State<HomeRoute> {
             subtitle: Text('Previsioni meteorologiche'),
             onTap: () {
               Navigator.of(context).pushNamed(MeteoRoute.routeName);
+            },
+          ),
+          Divider(),
+          ListTile(
+            title: Text('Il Miserere', style: TextStyle(color: Colors.white, backgroundColor: Colors.black),),
+            subtitle: Text('Coro maschile del Venerdì Santo', style: TextStyle(color: Colors.white, backgroundColor: Colors.black),),
+            onTap: () {
+              Navigator.of(context).pushNamed(MiserereRoute.routeName);
             },
           )
         ],

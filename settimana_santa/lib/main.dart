@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:settimana_santa/home_route.dart';
+import 'package:settimana_santa/miserere_route.dart';
 import 'package:settimana_santa/programma_route.dart';
 
 import 'confraternite_route.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         CosaVedereRoute.routeName: (context) => CosaVedereRoute(),
         FotogalleryRoute.routeName: (context) => FotogalleryRoute(),
         MeteoRoute.routeName: (context) => MeteoRoute(),
+        MiserereRoute.routeName: (context) => MiserereRoute(),
       },
       title: 'Passo dopo passo',
       theme: ThemeData(
