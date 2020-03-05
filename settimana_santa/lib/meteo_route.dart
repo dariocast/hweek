@@ -205,7 +205,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                                   size: 40,
                                                 ),
                                                 Text(
-                                                  'Feels like',
+                                                  'Percepita',
                                                   style: TextStyle(
                                                     fontSize: 15.0,
                                                     height: 1.5,
@@ -253,7 +253,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                                   size: 40,
                                                 ),
                                                 Text(
-                                                  'Wind',
+                                                  'Vento',
                                                   style: TextStyle(
                                                     fontSize: 15.0,
                                                     height: 1.5,
@@ -301,7 +301,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                                   size: 40,
                                                 ),
                                                 Text(
-                                                  'Humidity',
+                                                  'Umidità',
                                                   style: TextStyle(
                                                     fontSize: 15.0,
                                                     height: 1.5,
@@ -349,7 +349,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                                   size: 40,
                                                 ),
                                                 Text(
-                                                  'Pressure',
+                                                  'Pressione',
                                                   style: TextStyle(
                                                     fontSize: 15.0,
                                                     height: 1.5,
@@ -397,7 +397,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                                   size: 40,
                                                 ),
                                                 Text(
-                                                  'Visibility',
+                                                  'Visibilità',
                                                   style: TextStyle(
                                                     fontSize: 15.0,
                                                     height: 1.5,
@@ -452,7 +452,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                           size: 40,
                                         ),
                                         Text(
-                                          'Clouds',
+                                          'Nuvole',
                                           style: TextStyle(
                                             fontSize: 15.0,
                                             height: 1.5,
