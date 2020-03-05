@@ -77,12 +77,16 @@ class _HomeRouteState extends State<HomeRoute> {
             },
           ),
           Divider(),
-          ListTile(
-            title: Text('Il Miserere', style: TextStyle(color: Colors.white, backgroundColor: Colors.black),),
-            subtitle: Text('Coro maschile del Venerdì Santo', style: TextStyle(color: Colors.white, backgroundColor: Colors.black),),
-            onTap: () {
-              Navigator.of(context).pushNamed(MiserereRoute.routeName);
-            },
+          Material(
+            color: Colors.black,
+            child: ListTile(
+              title: Text('Il Miserere', style: TextStyle(color: Colors.white,),),
+              subtitle: Text('Coro maschile del Venerdì Santo', style: TextStyle(color: Colors.white,),),
+              onTap: () {
+                Navigator.of(context).pushNamed(MiserereRoute.routeName);
+              },
+            )
+            ,
           )
         ],
       ),

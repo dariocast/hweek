@@ -29,4 +29,5 @@ class AssetAudioPlayerIcons {
   static const IconData pause = const IconData(0xe802, fontFamily: _kFontFam);
   static const IconData to_end = const IconData(0xe803, fontFamily: _kFontFam);
   static const IconData to_start = const IconData(0xe804, fontFamily: _kFontFam);
+  static const IconData none = const IconData(0, fontFamily: _kFontFam);
 }
