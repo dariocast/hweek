@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:settimana_santa/meteo_route.dart';
 import 'package:settimana_santa/miserere_route.dart';
+import 'package:settimana_santa/notifiche_route.dart';
+
+import 'fotogallery_route.dart';
 
 class HomeRoute extends StatefulWidget {
   static var routeName = '/';
@@ -42,7 +45,7 @@ class _HomeRouteState extends State<HomeRoute> {
             IconButton(
               icon: Icon(Icons.notifications, color: Colors.yellow,),
               onPressed: () {
-
+                Navigator.of(context).pushNamed(NotificheRoute.routeName);
               },
             ),
           ]
@@ -67,6 +70,9 @@ class _HomeRouteState extends State<HomeRoute> {
           ListTile(
             title: Text('Fotogallery'),
             subtitle: Text('Le immagini della Settimana Santa'),
+            onTap: () {
+              Navigator.of(context).pushNamed(FotogalleryRoute.routeName);
+            },
           ),
           Divider(),
           ListTile(
@@ -77,16 +83,12 @@ class _HomeRouteState extends State<HomeRoute> {
             },
           ),
           Divider(),
-          Material(
-            color: Colors.black,
-            child: ListTile(
-              title: Text('Il Miserere', style: TextStyle(color: Colors.white,),),
-              subtitle: Text('Coro maschile del Venerdì Santo', style: TextStyle(color: Colors.white,),),
-              onTap: () {
-                Navigator.of(context).pushNamed(MiserereRoute.routeName);
-              },
-            )
-            ,
+          ListTile(
+            title: Text('Il Miserere',),
+            subtitle: Text('Coro maschile del Venerdì Santo',),
+            onTap: () {
+              Navigator.of(context).pushNamed(MiserereRoute.routeName);
+            },
           )
         ],
       ),

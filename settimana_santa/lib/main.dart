@@ -41,6 +41,17 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Morris',
         canvasColor: Colors.amber[50],
         textTheme: TextTheme(
+          subhead: TextStyle(
+            fontFamily: 'Morris',
+            fontSize: 25.0,
+            fontWeight: FontWeight.w500,
+          ),
+          body1: TextStyle(
+            color: Colors.red[900],
+            fontFamily: 'Morris',
+            fontSize: 18.0,
+            fontWeight: FontWeight.w500,
+          ),
           title: TextStyle(
             color: Colors.red[900],
             fontFamily: 'Morris',

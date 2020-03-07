@@ -38,8 +38,8 @@ class _MiserereRouteState extends State<MiserereRoute> {
               itemBuilder: (BuildContext context, int index) {
                 return ListTile(
                   contentPadding: EdgeInsets.all(5.0),
-                  title: Text(testo.strofe[index].cantato),
-                  subtitle: Text(testo.strofe[index].letto),
+                  title: Text(testo.strofe[index].cantato, style: TextStyle(fontSize: 30),),
+                  subtitle: Text(testo.strofe[index].letto, style: TextStyle(fontSize: 25),),
                 );
               },
             )),
