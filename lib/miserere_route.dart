@@ -38,8 +38,14 @@ class _MiserereRouteState extends State<MiserereRoute> {
               itemBuilder: (BuildContext context, int index) {
                 return ListTile(
                   contentPadding: EdgeInsets.all(5.0),
-                  title: Text(testo.strofe[index].cantato, style: TextStyle(fontSize: 30),),
-                  subtitle: Text(testo.strofe[index].letto, style: TextStyle(fontSize: 25),),
+                  title: Text(
+                    testo.strofe[index].cantato,
+                    style: TextStyle(fontSize: 30),
+                  ),
+                  subtitle: Text(
+                    testo.strofe[index].letto,
+                    style: TextStyle(fontSize: 25),
+                  ),
                 );
               },
             )),
@@ -69,8 +75,7 @@ class _MiserereRouteState extends State<MiserereRoute> {
             StreamBuilder(
               stream: _assetsAudioPlayer.isPlaying,
               initialData: false,
-              builder:
-                  (BuildContext context, AsyncSnapshot<bool> snapshot) {
+              builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
                 return Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -102,7 +107,7 @@ class _MiserereRouteState extends State<MiserereRoute> {
   @override
   void initState() {
     super.initState();
-    _assetsAudioPlayer.open(audio);
+    _assetsAudioPlayer.open(Audio(audio));
     _assetsAudioPlayer.pause();
   }
 }
