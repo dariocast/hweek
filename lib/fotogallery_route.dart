@@ -50,8 +50,7 @@ class _FotogalleryRouteState extends State<FotogalleryRoute> {
 Future<List<String>> fetchGalleryData() async {
   try {
     final response = await http
-        .get(
-        'http://dariocast.altervista.org/miserere/api/getImages.php')
+        .get('http://dariocast.altervista.org/miserere/api/getImages.php')
         .timeout(Duration(seconds: 5));
 
     if (response.statusCode == 200) {
