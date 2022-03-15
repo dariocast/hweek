@@ -5,8 +5,6 @@ import 'package:settimana_santa/weather_model.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:locales/locales.dart';
-
 
 const String apiKey = "2725dd88bd39461b360242b070542255";
 
@@ -46,10 +44,10 @@ class _MeteoRouteState extends State<MeteoRoute> {
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 WeatherModel model = snapshot.data;
-                initializeDateFormatting(Locale.it_IT.toString());
+                initializeDateFormatting(Locale('it', 'IT').toString());
                 //Format date
-                var fm = new DateFormat('dd MMMM yyyy', Locale.it_IT.toString());
-                var fm_hour = new DateFormat.Hm();
+                var fm = new DateFormat(
+                    'dd MMMM yyyy', Locale('it', 'IT').toString());
 
                 print(model.weather[0].icon);
 
@@ -187,10 +185,12 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                             decoration: new BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(12),
-                                              color: Theme.of(context).canvasColor,
+                                              color:
+                                                  Theme.of(context).canvasColor,
                                               boxShadow: [
                                                 new BoxShadow(
-                                                  color: Theme.of(context).primaryColor,
+                                                  color: Theme.of(context)
+                                                      .primaryColor,
                                                   blurRadius: 1.0,
                                                 )
                                               ],
@@ -235,10 +235,12 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                             decoration: new BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(12),
-                                              color: Theme.of(context).canvasColor,
+                                              color:
+                                                  Theme.of(context).canvasColor,
                                               boxShadow: [
                                                 new BoxShadow(
-                                                  color: Theme.of(context).primaryColor,
+                                                  color: Theme.of(context)
+                                                      .primaryColor,
                                                   blurRadius: 1.0,
                                                 )
                                               ],
@@ -283,10 +285,12 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                             decoration: new BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(12),
-                                              color: Theme.of(context).canvasColor,
+                                              color:
+                                                  Theme.of(context).canvasColor,
                                               boxShadow: [
                                                 new BoxShadow(
-                                                  color: Theme.of(context).primaryColor,
+                                                  color: Theme.of(context)
+                                                      .primaryColor,
                                                   blurRadius: 1.0,
                                                 )
                                               ],
@@ -331,10 +335,12 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                             decoration: new BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(12),
-                                              color: Theme.of(context).canvasColor,
+                                              color:
+                                                  Theme.of(context).canvasColor,
                                               boxShadow: [
                                                 new BoxShadow(
-                                                  color: Theme.of(context).primaryColor,
+                                                  color: Theme.of(context)
+                                                      .primaryColor,
                                                   blurRadius: 1.0,
                                                 )
                                               ],
@@ -379,10 +385,12 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                             decoration: new BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(12),
-                                              color: Theme.of(context).canvasColor,
+                                              color:
+                                                  Theme.of(context).canvasColor,
                                               boxShadow: [
                                                 new BoxShadow(
-                                                  color: Theme.of(context).primaryColor,
+                                                  color: Theme.of(context)
+                                                      .primaryColor,
                                                   blurRadius: 1.0,
                                                 )
                                               ],
@@ -554,8 +562,11 @@ class _MeteoRouteState extends State<MeteoRoute> {
 
   Future<WeatherModel> getWeather() async {
     final response = await http.get(
-        'https://api.openweathermap.org/data/2.5/weather?zip=80063,it&appid=' +
-            apiKey+'&units=metric&lang=it');
+      Uri.parse(
+          'https://api.openweathermap.org/data/2.5/weather?zip=80063,it&appid=' +
+              apiKey +
+              '&units=metric&lang=it'),
+    );
     if (response.statusCode == 200) {
       var result = json.decode(response.body);
       var model = WeatherModel.fromJson(result);

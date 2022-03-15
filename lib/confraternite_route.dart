@@ -12,8 +12,10 @@ class ConfraterniteRoute extends StatefulWidget {
 class _ConfraterniteRouteState extends State<ConfraterniteRoute> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return null;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Confraternite'),
+      ),
+    );
   }
-  
 }

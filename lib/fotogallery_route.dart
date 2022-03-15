@@ -50,7 +50,8 @@ class _FotogalleryRouteState extends State<FotogalleryRoute> {
 Future<List<String>> fetchGalleryData() async {
   try {
     final response = await http
-        .get('http://dariocast.altervista.org/miserere/api/getImages.php')
+        .get(Uri.parse(
+            'http://dariocast.altervista.org/miserere/api/getImages.php'))
         .timeout(Duration(seconds: 5));
 
     if (response.statusCode == 200) {
@@ -58,7 +59,7 @@ Future<List<String>> fetchGalleryData() async {
     } else {
       throw Exception('Failed to load');
     }
-  } on SocketException catch (e) {
+  } on SocketException {
     throw Exception('Failed to load');
   }
 }

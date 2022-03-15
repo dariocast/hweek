@@ -12,8 +12,10 @@ class NotificheRoute extends StatefulWidget {
 class _NotificheRouteState extends State<NotificheRoute> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return null;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Notifiche'),
+      ),
+    );
   }
-  
 }

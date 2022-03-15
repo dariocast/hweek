@@ -12,8 +12,10 @@ class CosaVedereRoute extends StatefulWidget {
 class _CosaVedereRouteState extends State<CosaVedereRoute> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return null;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('CosaVedere'),
+      ),
+    );
   }
-
 }

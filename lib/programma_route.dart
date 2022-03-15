@@ -12,8 +12,10 @@ class ProgrammaRoute extends StatefulWidget {
 class _ProgrammaRouteState extends State<ProgrammaRoute> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return null;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Programma'),
+      ),
+    );
   }
-
 }

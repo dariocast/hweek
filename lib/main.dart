@@ -10,7 +10,6 @@ import 'meteo_route.dart';
 
 void main() => runApp(MyApp());
 
-
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -28,51 +27,40 @@ class MyApp extends StatelessWidget {
       },
       title: 'Passo dopo passo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primaryColor: Colors.red[900],
+        primarySwatch: Colors.red,
         fontFamily: 'Morris',
         canvasColor: Colors.amber[50],
         textTheme: TextTheme(
-          subhead: TextStyle(
+          subtitle1: TextStyle(
             fontFamily: 'Morris',
             fontSize: 25.0,
             fontWeight: FontWeight.w500,
           ),
-          body1: TextStyle(
+          bodyText2: TextStyle(
             color: Colors.red[900],
             fontFamily: 'Morris',
             fontSize: 18.0,
             fontWeight: FontWeight.w500,
           ),
-          title: TextStyle(
+          headline6: TextStyle(
             color: Colors.red[900],
             fontFamily: 'Morris',
             fontSize: 20.0,
             fontWeight: FontWeight.w500,
           ),
-          subtitle: TextStyle(
+          subtitle2: TextStyle(
             color: Colors.red[900],
             fontFamily: 'Morris',
             fontSize: 14.0,
             fontWeight: FontWeight.w500,
           ),
-          button
-              : TextStyle(
+          button: TextStyle(
             color: Colors.red[900],
             fontFamily: 'Morris',
             fontSize: 14.0,
             fontWeight: FontWeight.w500,
           ),
-          caption
-              :TextStyle(
+          caption: TextStyle(
             color: Colors.red[900],
             fontFamily: 'Morris',
             fontSize: 12.0,
