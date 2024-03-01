@@ -18,7 +18,7 @@ class _FotogalleryRouteState extends State<FotogalleryRoute> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Image Gallery Example"),
+          title: Text("Foto Gallery"),
         ),
         body: Center(
           child: FutureBuilder<List<String>>(
@@ -26,7 +26,7 @@ class _FotogalleryRouteState extends State<FotogalleryRoute> {
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return GridView.builder(
-                    itemCount: snapshot.data.length,
+                    itemCount: snapshot.data?.length ?? 0,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2),
                     itemBuilder: (context, index) {
@@ -36,7 +36,7 @@ class _FotogalleryRouteState extends State<FotogalleryRoute> {
                               decoration: new BoxDecoration(
                                   image: new DecorationImage(
                                       image: new NetworkImage(
-                                          snapshot.data[index]),
+                                          snapshot.data![index]),
                                       fit: BoxFit.cover))));
                     });
               }

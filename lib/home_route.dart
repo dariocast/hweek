@@ -8,7 +8,7 @@ import 'fotogallery_route.dart';
 class HomeRoute extends StatefulWidget {
   static var routeName = '/';
 
-  HomeRoute({Key key, this.title}) : super(key: key);
+  HomeRoute({required this.title});
 
   final String title;
 

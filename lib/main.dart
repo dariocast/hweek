@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:settimana_santa/home_route.dart';
 import 'package:settimana_santa/miserere_route.dart';
+import 'package:settimana_santa/notifiche_route.dart';
 import 'package:settimana_santa/programma_route.dart';
 
 import 'confraternite_route.dart';
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       //routing info
       initialRoute: HomeRoute.routeName,
       routes: {
@@ -24,43 +26,47 @@ class MyApp extends StatelessWidget {
         FotogalleryRoute.routeName: (context) => FotogalleryRoute(),
         MeteoRoute.routeName: (context) => MeteoRoute(),
         MiserereRoute.routeName: (context) => MiserereRoute(),
+        NotificheRoute.routeName: (context) => NotificheRoute(),
       },
       title: 'Passo dopo passo',
       theme: ThemeData(
         primarySwatch: Colors.red,
+        appBarTheme: AppBarTheme(
+          color: Colors.red[900],
+        ),
         fontFamily: 'Morris',
         canvasColor: Colors.amber[50],
         textTheme: TextTheme(
-          subtitle1: TextStyle(
+          titleMedium: TextStyle(
             fontFamily: 'Morris',
             fontSize: 25.0,
             fontWeight: FontWeight.w500,
           ),
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             color: Colors.red[900],
             fontFamily: 'Morris',
             fontSize: 18.0,
             fontWeight: FontWeight.w500,
           ),
-          headline6: TextStyle(
+          titleLarge: TextStyle(
             color: Colors.red[900],
             fontFamily: 'Morris',
             fontSize: 20.0,
             fontWeight: FontWeight.w500,
           ),
-          subtitle2: TextStyle(
+          titleSmall: TextStyle(
             color: Colors.red[900],
             fontFamily: 'Morris',
             fontSize: 14.0,
             fontWeight: FontWeight.w500,
           ),
-          button: TextStyle(
+          labelLarge: TextStyle(
             color: Colors.red[900],
             fontFamily: 'Morris',
             fontSize: 14.0,
             fontWeight: FontWeight.w500,
           ),
-          caption: TextStyle(
+          bodySmall: TextStyle(
             color: Colors.red[900],
             fontFamily: 'Morris',
             fontSize: 12.0,
@@ -68,7 +74,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: HomeRoute(title: 'Settimana Santa 2020'),
+      home: HomeRoute(title: 'Settimana Santa 2023'),
     );
   }
 }

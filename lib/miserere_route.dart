@@ -56,7 +56,7 @@ class _MiserereRouteState extends State<MiserereRoute> {
                 StreamBuilder(
                     stream: _assetsAudioPlayer.currentPosition,
                     builder: (context, asyncSnapshot) {
-                      final Duration duration = asyncSnapshot.data;
+                      final Duration duration = asyncSnapshot.data!;
                       return Text(duration.toString());
                     }),
                 Text(" - "),
@@ -90,7 +90,7 @@ class _MiserereRouteState extends State<MiserereRoute> {
                       onPressed: () {
                         _assetsAudioPlayer.playOrPause();
                       },
-                      icon: Icon(snapshot.data
+                      icon: Icon(snapshot.hasData
                           ? AssetAudioPlayerIcons.pause
                           : AssetAudioPlayerIcons.play),
                     ),
@@ -149,7 +149,7 @@ class TestoMiserere {
   final String titolo;
   final List<StrofaTestoMiserere> strofe;
 
-  TestoMiserere({this.titolo, this.strofe});
+  TestoMiserere({required this.titolo, required this.strofe});
 
   factory TestoMiserere.fromJson(Map<String, dynamic> json) {
     return TestoMiserere(titolo: json['titolo'], strofe: json['strofe']);
@@ -177,7 +177,7 @@ class StrofaTestoMiserere {
   final String cantato;
   final String letto;
 
-  StrofaTestoMiserere({this.cantato, this.letto});
+  StrofaTestoMiserere({required this.cantato, required this.letto});
 
   factory StrofaTestoMiserere.fromJson(Map<String, dynamic> json) {
     return StrofaTestoMiserere(cantato: json['cantato'], letto: json['letto']);

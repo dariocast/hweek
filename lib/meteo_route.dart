@@ -6,7 +6,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-const String apiKey = "2725dd88bd39461b360242b070542255";
+const String apiKey = "ac71279c6f8aa70abc673ee926b7410b";
 
 class MeteoRoute extends StatefulWidget {
   static var routeName = 'meteo';
@@ -23,6 +23,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
       appBar: AppBar(
         title: Text(
           'Previsioni Meteo',
@@ -37,13 +38,13 @@ class _MeteoRouteState extends State<MeteoRoute> {
       body: SingleChildScrollView(
         child: Container(
           decoration: new BoxDecoration(
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).appBarTheme.backgroundColor,
           ),
           child: FutureBuilder<WeatherModel>(
             future: getWeather(),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                WeatherModel model = snapshot.data;
+                WeatherModel model = snapshot.data!;
                 initializeDateFormatting(Locale('it', 'IT').toString());
                 //Format date
                 var fm = new DateFormat(
@@ -115,7 +116,7 @@ class _MeteoRouteState extends State<MeteoRoute> {
                     Stack(
                       children: <Widget>[
                         Container(
-                          height: 400,
+                          height: 700,
                           width: double.infinity,
                           padding: EdgeInsets.all(20),
                           decoration: BoxDecoration(
@@ -178,254 +179,54 @@ class _MeteoRouteState extends State<MeteoRoute> {
                                         // This next line does the trick.
                                         scrollDirection: Axis.horizontal,
                                         children: <Widget>[
-                                          Container(
-                                            margin: EdgeInsets.all(5),
-                                            padding: EdgeInsets.all(20),
-                                            width: 160.0,
-                                            decoration: new BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(12),
-                                              color:
-                                                  Theme.of(context).canvasColor,
-                                              boxShadow: [
-                                                new BoxShadow(
-                                                  color: Theme.of(context)
-                                                      .primaryColor,
-                                                  blurRadius: 1.0,
-                                                )
-                                              ],
-                                            ),
-                                            child: new Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: <Widget>[
-                                                new Icon(
-                                                  Icons.wb_sunny,
-                                                  color: Colors.orange,
-                                                  size: 40,
-                                                ),
-                                                Text(
-                                                  'Percepita',
-                                                  style: TextStyle(
-                                                    fontSize: 15.0,
-                                                    height: 1.5,
-                                                    letterSpacing: 0.25,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontFamily: 'Morris',
-                                                  ),
-                                                ),
-                                                Text(
-                                                  '${model.main.temp}°C',
-                                                  style: TextStyle(
-                                                    fontSize: 15.0,
-                                                    height: 1.0,
-                                                    letterSpacing: 0.25,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    fontFamily: 'Morris',
-                                                  ),
-                                                ),
-                                              ],
+                                          WeatherAttributeCard(
+                                            attributeName: 'Percepita',
+                                            attributeValue:
+                                                '${model.main.temp}°C',
+                                            icon: Icon(
+                                              Icons.wb_sunny,
+                                              color: Colors.orange,
+                                              size: 40,
                                             ),
                                           ),
-                                          Container(
-                                            margin: EdgeInsets.all(5),
-                                            padding: EdgeInsets.all(20),
-                                            width: 160.0,
-                                            decoration: new BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(12),
-                                              color:
-                                                  Theme.of(context).canvasColor,
-                                              boxShadow: [
-                                                new BoxShadow(
-                                                  color: Theme.of(context)
-                                                      .primaryColor,
-                                                  blurRadius: 1.0,
-                                                )
-                                              ],
-                                            ),
-                                            child: new Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: <Widget>[
-                                                new Icon(
-                                                  Icons.toys,
-                                                  color: Colors.blueGrey,
-                                                  size: 40,
-                                                ),
-                                                Text(
-                                                  'Vento',
-                                                  style: TextStyle(
-                                                    fontSize: 15.0,
-                                                    height: 1.5,
-                                                    letterSpacing: 0.25,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontFamily: 'Morris',
-                                                  ),
-                                                ),
-                                                Text(
-                                                  '${model.wind.speed} m/s',
-                                                  style: TextStyle(
-                                                    fontSize: 15.0,
-                                                    height: 1.0,
-                                                    letterSpacing: 0.25,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    fontFamily: 'Morris',
-                                                  ),
-                                                ),
-                                              ],
+                                          WeatherAttributeCard(
+                                            attributeName: 'Vento',
+                                            attributeValue:
+                                                '${model.wind.speed * 3.6} km/h',
+                                            icon: Icon(
+                                              Icons.wind_power_outlined,
+                                              color: Colors.blueGrey,
+                                              size: 40,
                                             ),
                                           ),
-                                          Container(
-                                            margin: EdgeInsets.all(5),
-                                            padding: EdgeInsets.all(20),
-                                            width: 160.0,
-                                            decoration: new BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(12),
-                                              color:
-                                                  Theme.of(context).canvasColor,
-                                              boxShadow: [
-                                                new BoxShadow(
-                                                  color: Theme.of(context)
-                                                      .primaryColor,
-                                                  blurRadius: 1.0,
-                                                )
-                                              ],
-                                            ),
-                                            child: new Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: <Widget>[
-                                                new Icon(
-                                                  Icons.opacity,
-                                                  color: Colors.blueAccent,
-                                                  size: 40,
-                                                ),
-                                                Text(
-                                                  'Umidità',
-                                                  style: TextStyle(
-                                                    fontSize: 15.0,
-                                                    height: 1.5,
-                                                    letterSpacing: 0.25,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontFamily: 'Morris',
-                                                  ),
-                                                ),
-                                                Text(
-                                                  '${model.main.humidity} %',
-                                                  style: TextStyle(
-                                                    fontSize: 15.0,
-                                                    height: 1.0,
-                                                    letterSpacing: 0.25,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    fontFamily: 'Morris',
-                                                  ),
-                                                ),
-                                              ],
+                                          WeatherAttributeCard(
+                                            attributeName: 'Umidità',
+                                            attributeValue:
+                                                '${model.main.humidity} %',
+                                            icon: Icon(
+                                              Icons.opacity,
+                                              color: Colors.blueAccent,
+                                              size: 40,
                                             ),
                                           ),
-                                          Container(
-                                            padding: EdgeInsets.all(20),
-                                            margin: EdgeInsets.all(5),
-                                            width: 160.0,
-                                            decoration: new BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(12),
-                                              color:
-                                                  Theme.of(context).canvasColor,
-                                              boxShadow: [
-                                                new BoxShadow(
-                                                  color: Theme.of(context)
-                                                      .primaryColor,
-                                                  blurRadius: 1.0,
-                                                )
-                                              ],
-                                            ),
-                                            child: new Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: <Widget>[
-                                                new Icon(
-                                                  Icons.arrow_downward,
-                                                  color: Colors.redAccent,
-                                                  size: 40,
-                                                ),
-                                                Text(
-                                                  'Pressione',
-                                                  style: TextStyle(
-                                                    fontSize: 15.0,
-                                                    height: 1.5,
-                                                    letterSpacing: 0.25,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontFamily: 'Morris',
-                                                  ),
-                                                ),
-                                                Text(
-                                                  '${model.main.pressure} hPa',
-                                                  style: TextStyle(
-                                                    fontSize: 15.0,
-                                                    height: 1.0,
-                                                    letterSpacing: 0.25,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    fontFamily: 'Morris',
-                                                  ),
-                                                ),
-                                              ],
+                                          WeatherAttributeCard(
+                                            attributeName: 'Pressione',
+                                            attributeValue:
+                                                '${model.main.pressure} hPa',
+                                            icon: Icon(
+                                              Icons.arrow_downward,
+                                              color: Colors.redAccent,
+                                              size: 40,
                                             ),
                                           ),
-                                          Container(
-                                            padding: EdgeInsets.all(20),
-                                            margin: EdgeInsets.all(5),
-                                            width: 160.0,
-                                            decoration: new BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(12),
-                                              color:
-                                                  Theme.of(context).canvasColor,
-                                              boxShadow: [
-                                                new BoxShadow(
-                                                  color: Theme.of(context)
-                                                      .primaryColor,
-                                                  blurRadius: 1.0,
-                                                )
-                                              ],
-                                            ),
-                                            child: new Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: <Widget>[
-                                                new Icon(
-                                                  Icons.visibility,
-                                                  color: Colors.black54,
-                                                  size: 40,
-                                                ),
-                                                Text(
-                                                  'Visibilità',
-                                                  style: TextStyle(
-                                                    fontSize: 15.0,
-                                                    height: 1.5,
-                                                    letterSpacing: 0.25,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontFamily: 'Morris',
-                                                  ),
-                                                ),
-                                                Text(
-                                                  '${model.visibility / 1000} km',
-                                                  style: TextStyle(
-                                                    fontSize: 15.0,
-                                                    height: 1.0,
-                                                    letterSpacing: 0.25,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    fontFamily: 'Morris',
-                                                  ),
-                                                ),
-                                              ],
+                                          WeatherAttributeCard(
+                                            attributeName: 'Visibilità',
+                                            attributeValue:
+                                                '${model.visibility / 1000} km',
+                                            icon: Icon(
+                                              Icons.visibility,
+                                              color: Colors.black54,
+                                              size: 40,
                                             ),
                                           ),
                                         ],
@@ -573,5 +374,62 @@ class _MeteoRouteState extends State<MeteoRoute> {
       return model;
     } else
       throw Exception('Failed to load Weather Information');
+  }
+}
+
+class WeatherAttributeCard extends StatelessWidget {
+  const WeatherAttributeCard({
+    required this.attributeValue,
+    required this.attributeName,
+    required this.icon,
+  });
+
+  final String attributeName;
+  final Icon icon;
+  final String attributeValue;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(5),
+      padding: EdgeInsets.all(5),
+      width: 100.0,
+      decoration: new BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        color: Theme.of(context).canvasColor,
+        boxShadow: [
+          new BoxShadow(
+            color: Theme.of(context).primaryColor,
+            blurRadius: 1.0,
+          )
+        ],
+      ),
+      child: new Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          icon,
+          Text(
+            '${attributeName}',
+            style: TextStyle(
+              fontSize: 15.0,
+              height: 1.5,
+              letterSpacing: 0.25,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Morris',
+            ),
+          ),
+          Text(
+            '${attributeValue}',
+            style: TextStyle(
+              fontSize: 15.0,
+              height: 1.0,
+              letterSpacing: 0.25,
+              fontWeight: FontWeight.normal,
+              fontFamily: 'Morris',
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

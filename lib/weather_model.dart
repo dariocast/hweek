@@ -2,7 +2,7 @@ class Coord {
   final double lon;
   final double lat;
 
-  Coord({this.lon, this.lat});
+  Coord({required this.lon, required this.lat});
 
   factory Coord.fromJson(Map<String, dynamic> json) {
     return Coord(
@@ -17,7 +17,11 @@ class Weather {
   final String description;
   final String icon;
 
-  Weather({this.id, this.main, this.description, this.icon});
+  Weather(
+      {required this.id,
+      required this.main,
+      required this.description,
+      required this.icon});
 
   factory Weather.fromJson(Map<String, dynamic> json) {
     return Weather(
@@ -38,13 +42,13 @@ class Main {
   final double grnd_level;
 
   Main(
-      {this.temp,
-        this.pressure,
-        this.humidity,
-        this.temp_min,
-        this.temp_max,
-        this.sea_level,
-        this.grnd_level});
+      {required this.temp,
+      required this.pressure,
+      required this.humidity,
+      required this.temp_min,
+      required this.temp_max,
+      required this.sea_level,
+      required this.grnd_level});
 
   factory Main.fromJson(Map<String, dynamic> json) {
     return Main(
@@ -66,7 +70,7 @@ class Wind {
   final double speed;
   final double deg;
 
-  Wind({this.speed, this.deg});
+  Wind({required this.speed, required this.deg});
 
   factory Wind.fromJson(Map<String, dynamic> json) {
     return Wind(
@@ -78,7 +82,7 @@ class Wind {
 class Clouds {
   final int all;
 
-  Clouds({this.all});
+  Clouds({required this.all});
 
   factory Clouds.fromJson(Map<String, dynamic> json) {
     return Clouds(all: json['all']);
@@ -91,7 +95,11 @@ class Sys {
   final int sunrise;
   final int sunset;
 
-  Sys({this.message, this.country, this.sunrise, this.sunset});
+  Sys(
+      {required this.message,
+      required this.country,
+      required this.sunrise,
+      required this.sunset});
 
   factory Sys.fromJson(Map<String, dynamic> json) {
     return Sys(
@@ -117,18 +125,18 @@ class WeatherModel {
   final int cod;
 
   WeatherModel(
-      {this.coord,
-        this.weather,
-        this.base,
-        this.main,
-        this.visibility,
-        this.wind,
-        this.clouds,
-        this.dt,
-        this.sys,
-        this.id,
-        this.name,
-        this.cod});
+      {required this.coord,
+      required this.weather,
+      required this.base,
+      required this.main,
+      required this.visibility,
+      required this.wind,
+      required this.clouds,
+      required this.dt,
+      required this.sys,
+      required this.id,
+      required this.name,
+      required this.cod});
 
   factory WeatherModel.fromJson(Map<String, dynamic> json) {
     return WeatherModel(
