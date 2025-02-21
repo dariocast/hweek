@@ -1,11 +1,11 @@
 {
-    "name": "hweek",
-    "short_name": "hweek",
+    "name": "Hweek",
+    "short_name": "Hweek",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "An app showcasing the Holy Week events and ceremonies in Piano di Sorrento and nearby.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
