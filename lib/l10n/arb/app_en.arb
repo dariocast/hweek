@@ -1,7 +1,31 @@
 {
     "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
+    "home_appTitle": "Settimana Santa",
+    "@home_appTitle": {
+      "description": "Main application title shown in the AppBar"
+    },
+    "home_menuTitle": "Menu",
+    "@home_menuTitle": {
+      "description": "Drawer header title"
+    },
+    "home_mapOfProcessions": "Map of Processions",
+    "@home_mapOfProcessions": {
+      "description": "Navigation item for the map view of Holy Week processions"
+    },
+    "home_schedules": "Schedules",
+    "@home_schedules": {
+      "description": "Navigation item for the procession schedule view"
+    },
+    "home_confraternities": "Confraternities",
+    "@home_confraternities": {
+      "description": "Navigation item for viewing details of confraternities"
+    },
+    "viewPaths_emptyPaths": "No paths found",
+    "@viewPaths_emptyPaths": {
+      "description": "Message shown when there are no paths to display"
+    },
+    "viewPaths_appBarTitle": "Paths",
+    "@viewPaths_appBarTitle": {
+      "description": "Application bar title for the paths view"
     }
-}
+  }

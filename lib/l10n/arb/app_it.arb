@@ -1,7 +1,31 @@
 {
     "@@locale": "it",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Testo mostrato nell'AppBar della pagina Counter"
+    "home_appTitle": "Settimana Santa",
+    "@home_appTitle": {
+      "description": "Titolo principale dell'applicazione mostrato nella AppBar"
+    },
+    "home_menuTitle": "Menu",
+    "@home_menuTitle": {
+      "description": "Titolo dell'intestazione del menu laterale"
+    },
+    "home_mapOfProcessions": "Mappa delle Processioni",
+    "@home_mapOfProcessions": {
+      "description": "Voce di navigazione per la vista mappa delle processioni della Settimana Santa"
+    },
+    "home_schedules": "Programma",
+    "@home_schedules": {
+      "description": "Voce di navigazione per la vista del programma delle processioni"
+    },
+    "home_confraternities": "Confraternite",
+    "@home_confraternities": {
+      "description": "Voce di navigazione per visualizzare i dettagli delle confraternite"
+    },
+    "viewPaths_emptyPaths": "Nessun percorso trovato",
+    "@viewPaths_emptyPaths": {
+      "description": "Messaggio mostrato quando non ci sono percorsi da visualizzare"
+    },
+    "viewPaths_appBarTitle": "Percorsi",
+    "@viewPaths_appBarTitle": {
+      "description": "Titolo della barra dell'applicazione per la vista dei percorsi"
     }
-}
+  }
